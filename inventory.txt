@@ -1,0 +1,1 @@
+5g_server ansible_host=192.168.5.95 ansible_ssh_pass=ubuntu ansible_user=ubuntu
