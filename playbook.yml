@@ -87,6 +87,7 @@
 
     - name: Clone code open5gs
       shell: |
+        sudo rm -rf open5gs
         git clone https://github.com/open5gs/open5gs.git
 
     - name: Run Dashboard
