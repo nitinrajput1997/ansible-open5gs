@@ -1,6 +1,6 @@
 - 
   name: Deploy a 5G Core
-  hosts: 5g_server
+  hosts: all
   become: yes
   vars:
     server_value: 192.168.5.95
