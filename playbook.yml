@@ -2,8 +2,6 @@
   name: Deploy a 5G Core
   hosts: all
   become: yes
-  vars:
-    server_value: 192.168.5.95
   tasks:
     - name: Update all packages to their latest version
       apt:
@@ -35,7 +33,7 @@
         after: 'amf:\n\s+sbi:\n\s+\-\s+addr\:'
         before: 'guami:'
         regexp: '(\-\s+addr\:\s)+127\.0\.0\.5'
-        replace: '\g<1>{{ server_value }}'
+        replace: '\g<1>{{ ansible_host }}'
         backup: yes
 
 
@@ -45,7 +43,7 @@
         after: 'upf:\n\s+pfcp:\n\s+\-\s+addr\:'
         before: 'subnet:'
         regexp: '(\-\s+addr\:\s)+127\.0\.0\.7'
-        replace: '\g<1>{{ server_value }}'
+        replace: '\g<1>{{ ansible_host }}'
         backup: yes
 
 
